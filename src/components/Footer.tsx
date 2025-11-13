@@ -33,7 +33,7 @@ export const Footer = () => {
         </div>
       </div>
       <div className="text-sm text-gray-500 text-center flex max-sm:flex-col">
-        &copy; 2025 Người gieo chữ giữa mây ngàn.{"  "}
+        &copy; 2025 Người gieo chữ giữa mây ngàn.&ensp;
         <span>Designed by Son Bui</span>.
       </div>
     </div>
