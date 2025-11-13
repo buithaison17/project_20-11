@@ -1,23 +1,27 @@
 import MainBanner from "../assets/images/mainbanner.jpg";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
-export const Banner = () => {
+interface Props {
+  scroll: (idElement: string) => void;
+}
+
+export const Banner = ({ scroll }: Props) => {
   return (
     <div
       data-aos="fade-down"
       style={{ backgroundImage: `url(${MainBanner})` }}
-      className="w-full max-w-full overflow-hidden relative h-[600px] bg-cover bg-center flex flex-col gap-5 justify-center items-center"
+      className="w-full max-w-full overflow-hidden relative h-[550px] bg-cover bg-center flex flex-col gap-5 justify-center items-center"
     >
       <div className="absolute inset-0 bg-black/15 z-0"></div>
       <div
         data-aos="fade-down"
-        className="text-center leading-snug font-bold z-10 text-white text-4xl w-[400px] font-merriweather"
+        className="text-center leading-snug font-bold z-10 text-white text-4xl font-merriweather"
       >
-        Người thầy gieo chữ giữa mây ngàn
+        Người gieo chữ giữa mây ngàn
       </div>
       <div
         data-aos="fade-left"
-        className="z-10 font-roboto text-xl text-[#F2C57C]"
+        className="z-10 font-roboto text-xl text-center text-[#F2C57C]"
       >
         Một hành trình mang con chữ đến vùng cao
       </div>
@@ -27,7 +31,7 @@ export const Banner = () => {
       >
         Khám phá câu chuyện
       </button>
-      <div>
+      <div onClick={() => scroll("story")}>
         <KeyboardArrowDownIcon
           className="z-20 absolute text-white bottom-6 bounce-up-down cursor-pointer"
           fontSize="large"

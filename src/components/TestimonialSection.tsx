@@ -2,18 +2,21 @@ import StarIcon from "@mui/icons-material/Star";
 
 export const TestimonialSection = () => {
   return (
-    <div className=" w-full max-w-full overflow-hidden p-12 flex flex-col gap-6 justify-center items-center">
+    <div
+      id="student"
+      className="scroll-mt-10 w-full max-w-full overflow-hidden p-12 flex flex-col gap-6 justify-center items-center"
+    >
       <div
         data-aos="zoom-in"
-        className="text-3xl font-semibold text-[#8B5E3C] font-merriweather text-center text"
+        className="text-3xl font-semibold text-[#8B5E3C] font-merriweather text-center text max-sm:text-xl"
       >
-        Hành Trình Gieo Chữ
+        Lời tri ân
       </div>
-      <div className="grid grid-cols-3 gap-5">
+      <div className="grid grid-cols-3 gap-5 max-sm:grid-cols-1">
         <div className="hover:scale-110 transition-all duration-150">
           <div
             data-aos="zoom-in-right"
-            className="flex flex-col gap-3 bg-gradient-to-br from-[#FBF4E6] to-[#E3F0E0] w-[400px] p-3 rounded-xl shadow-md border"
+            className="flex flex-col gap-3 bg-gradient-to-br from-[#FBF4E6] to-[#E3F0E0]  p-3 rounded-xl shadow-md border"
           >
             <div className="flex gap-3 items-center">
               <img
@@ -45,7 +48,7 @@ export const TestimonialSection = () => {
         <div className="hover:scale-110 transition-all duration-150">
           <div
             data-aos="zoom-in-up"
-            className="flex flex-col gap-3 bg-gradient-to-br from-[#FBF4E6] to-[#E3F0E0] w-[400px] p-3 rounded-xl shadow-md border"
+            className="flex flex-col gap-3 bg-gradient-to-br from-[#FBF4E6] to-[#E3F0E0]  p-3 rounded-xl shadow-md border"
           >
             <div className="flex gap-3 items-center">
               <img
@@ -78,7 +81,7 @@ export const TestimonialSection = () => {
         <div className="hover:scale-110 transition-all duration-150">
           <div
             data-aos="zoom-in-left"
-            className="flex flex-col gap-3 bg-gradient-to-br from-[#FBF4E6] to-[#E3F0E0] w-[400px] p-3 rounded-xl shadow-md border"
+            className="flex flex-col gap-3 bg-gradient-to-br from-[#FBF4E6] to-[#E3F0E0]  p-3 rounded-xl shadow-md border"
           >
             <div className="flex gap-3 items-center">
               <img
