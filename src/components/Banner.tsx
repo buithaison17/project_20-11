@@ -26,6 +26,7 @@ export const Banner = ({ scroll }: Props) => {
         Một hành trình mang con chữ đến vùng cao
       </div>
       <button
+        onClick={() => scroll("story")}
         data-aos="fade-up"
         className="px-5 py-2 bg-[#8B5E3C] hover:bg-[#7c5436] hover:duration-200 font-roboto rounded-3xl text-white shadow z-10"
       >

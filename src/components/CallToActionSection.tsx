@@ -1,6 +1,36 @@
 import FavoriteIcon from "@mui/icons-material/Favorite";
+import React, { useState } from "react";
+import { addWish } from "../utils/addWish";
 
 export const CallToActionSection = () => {
+  const [input, setInput] = useState({
+    username: "",
+    classRoom: "",
+    message: "",
+  });
+  const [error, setError] = useState({
+    username: "",
+    classRoom: "",
+    message: "",
+  });
+  const handleInput = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ): void => {
+    const { name, value } = e.target;
+    setInput({ ...input, [name]: value });
+  };
+  const onAdd = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const newError = {
+      username: !input.username.trim() ? "username không được để trống" : "",
+      classRoom: !input.classRoom.trim() ? "Lớp học không được để trống" : "",
+      message: !input.message.trim() ? "Lời chúc không được để trống" : "",
+    };
+    setError(newError);
+    if (newError.username || newError.classRoom || newError.message) return;
+    await addWish(input.username, input.classRoom, input.message);
+    setInput({ ...input, username: "", classRoom: "", message: "" });
+  };
   return (
     <div
       id="wishes"
@@ -26,6 +56,7 @@ export const CallToActionSection = () => {
         người thầy đã dành cả cuộc đời để gieo chữ
       </div>
       <form
+        onSubmit={onAdd}
         data-aos="fade-left"
         className="w-[600px] p-3 rounded-md bg-[#c78b5d] flex flex-col gap-3 max-sm:w-[300px]"
       >
@@ -34,30 +65,54 @@ export const CallToActionSection = () => {
             Tên của bạn
           </label>
           <input
+            value={input.username}
+            name="username"
+            onChange={handleInput}
             type="text"
             placeholder="Nhập tên của bạn"
-            className="px-3 py-1 rounded outline-none border hover:border-blue-500 focus:border-blue-500"
+            className={`px-3 py-1 rounded outline-none border hover:border-blue-500 focus:border-blue-500 ${
+              error.username ? "border-red-500" : ""
+            }`}
           />
+          {error.username && (
+            <p className="text-red-500 font-semibold">{error.username}</p>
+          )}
         </div>
         <div className="flex flex-col gap-1">
           <label htmlFor="student" className="text-white">
             Lớp
           </label>
           <input
+            value={input.classRoom}
+            name="classRoom"
+            onChange={handleInput}
             id="student"
             type="text"
-            placeholder="Nhập tên của bạn"
-            className="px-3 py-1 rounded outline-none border hover:border-blue-500 focus:border-blue-500"
+            placeholder="Nhập lớp của bạn"
+            className={`px-3 py-1 rounded outline-none border hover:border-blue-500 focus:border-blue-500 ${
+              error.classRoom ? "border-red-500" : ""
+            }`}
           />
+          {error.classRoom && (
+            <p className="text-red-500 font-semibold">{error.classRoom}</p>
+          )}
         </div>
         <div className="flex flex-col gap-1">
           <label htmlFor="message" className="text-white">
             Lời chúc của bạn
           </label>
           <textarea
+            value={input.message}
+            name="message"
+            onChange={handleInput}
             id="message"
-            className="px-3 py-1 rounded outline-none border hover:border-blue-500 focus:border-blue-500"
+            className={`px-3 py-1 min-h-[130px] rounded outline-none border hover:border-blue-500 focus:border-blue-500 ${
+              error.message ? "border-red-500 font-semibold" : ""
+            }`}
           />
+          {error.message && (
+            <p className="text-red-500 font-semibold">{error.message}</p>
+          )}
         </div>
         <div className="flex items-center gap-3 justify-end">
           <button

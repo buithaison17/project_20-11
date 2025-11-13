@@ -15,7 +15,7 @@ export const StoryModal = ({ onStart }: Props) => {
       style={{ backgroundImage: `url(${Banner})` }}
       className="fixed inset-0 top-0 left-0 z-50 bg-cover bg-center flex justify-center items-center"
     >
-      <div className="fixed inset-0 bg-white/15"></div>
+      <div className="fixed inset-0 bg-white/20"></div>
       <div
         data-aos="zoom-in"
         className="w-[550px] max-sm:w-[350px] bg-[#141D30] rounded-xl z-[60] p-6 flex flex-col gap-6 justify-center items-center shadow-md"
