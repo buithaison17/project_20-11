@@ -1,4 +1,7 @@
 import StarIcon from "@mui/icons-material/Star";
+import Avatar1 from "../assets/icons/avatar1.jpg";
+import Avatar2 from "../assets/icons/avatar2.jpg";
+import Avatar3 from "../assets/icons/avatar3.jpg";
 
 export const TestimonialSection = () => {
   return (
@@ -20,7 +23,7 @@ export const TestimonialSection = () => {
           >
             <div className="flex gap-3 items-center">
               <img
-                src="http://localhost:5173/src/assets/images/story5.png"
+                src={Avatar2}
                 alt=""
                 className="size-16 border-[5px] shadow-md border-white rounded-full object-center object-cover"
               />
@@ -52,13 +55,13 @@ export const TestimonialSection = () => {
           >
             <div className="flex gap-3 items-center">
               <img
-                src="http://localhost:5173/src/assets/images/story5.png"
+                src={Avatar1}
                 alt=""
                 className="size-16 border-[5px] shadow-md border-white rounded-full object-center object-cover"
               />
               <div className="flex flex-col gap-1">
                 <div className="text-xl font-semibold text-[#8B5E3C]">
-                  Nguyễn Thị Mai
+                  Vũ Đình Kiên
                 </div>
                 <div className="text-[#4B5563]">Giáo viên tiểu học</div>
               </div>
@@ -85,15 +88,15 @@ export const TestimonialSection = () => {
           >
             <div className="flex gap-3 items-center">
               <img
-                src="http://localhost:5173/src/assets/images/story5.png"
+                src={Avatar3}
                 alt=""
                 className="size-16 border-[5px] shadow-md border-white rounded-full object-center object-cover"
               />
               <div className="flex flex-col gap-1">
                 <div className="text-xl font-semibold text-[#8B5E3C]">
-                  Nguyễn Thị Mai
+                  Đỗ Trí Công
                 </div>
-                <div className="text-[#4B5563]">Giáo viên tiểu học</div>
+                <div className="text-[#4B5563]">Lập trình viên</div>
               </div>
             </div>
             <div className="italic text-[#4B5563]">

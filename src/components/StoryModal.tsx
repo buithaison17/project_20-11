@@ -20,27 +20,45 @@ export const StoryModal = ({ onStart }: Props) => {
         data-aos="zoom-in"
         className="w-[550px] max-sm:w-[350px] bg-[#141D30] rounded-xl z-[60] p-6 flex flex-col gap-6 justify-center items-center shadow-md"
       >
-        <div className="text-3xl font-merriweather text-[#FDE158] text-center">
-          <ReactTyped
-            strings={["Người Gieo Chữ Giữa Mây Ngàn"]}
-            onComplete={() => setTitleDone(true)}
-            typeSpeed={100}
-          ></ReactTyped>
-        </div>
-        <div className="font-roboto text-white text-center leading-snug">
-          {titleDone && (
+        {!titleDone && (
+          <div className="text-3xl font-merriweather text-[#FDE158] text-center">
             <ReactTyped
-              strings={[
-                `Giữa mây ngàn và sương núi, một người thầy trẻ mang con chữ đến những
+              strings={["Người Gieo Chữ Giữa Mây Ngàn"]}
+              onComplete={() => setTitleDone(true)}
+              typeSpeed={100}
+              startDelay={500}
+            ></ReactTyped>
+          </div>
+        )}
+        {titleDone && (
+          <div className="text-3xl font-merriweather text-[#FDE158] text-center">
+            Người gieo chữ giữa mây ngàn
+          </div>
+        )}
+        {!isDone && (
+          <div className="font-roboto text-white text-center leading-snug">
+            {titleDone && (
+              <ReactTyped
+                strings={[
+                  `Giữa mây ngàn và sương núi, một người thầy trẻ mang con chữ đến những
           bản làng xa xôi. Với bảng phấn cũ và những viên vở sờn, thầy gieo hy
           vọng và ánh sáng tri thức cho những đứa trẻ vùng cao. Hãy cùng bước vào
           hành trình gieo chữ nơi núi cao....`,
-              ]}
-              onComplete={() => setIsDone(true)}
-              typeSpeed={60}
-            ></ReactTyped>
-          )}
-        </div>
+                ]}
+                onComplete={() => setIsDone(true)}
+                typeSpeed={60}
+              ></ReactTyped>
+            )}
+          </div>
+        )}
+        {isDone && (
+          <div className="font-roboto text-white text-center leading-snug">
+            Giữa mây ngàn và sương núi, một người thầy trẻ mang con chữ đến
+            những bản làng xa xôi. Với bảng phấn cũ và những viên vở sờn, thầy
+            gieo hy vọng và ánh sáng tri thức cho những đứa trẻ vùng cao. Hãy
+            cùng bước vào hành trình gieo chữ nơi núi cao....
+          </div>
+        )}
         {isDone && (
           <button
             onClick={onStart}
