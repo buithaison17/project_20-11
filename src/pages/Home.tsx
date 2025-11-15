@@ -48,7 +48,7 @@ export const Home = () => {
             <ArrowUpwardIcon className="text-white"></ArrowUpwardIcon>
           </div>
         </>
-      )}
+        )}
     </div>
   );
 };

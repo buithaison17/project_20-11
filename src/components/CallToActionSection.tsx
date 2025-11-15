@@ -65,6 +65,7 @@ export const CallToActionSection = () => {
             Tên của bạn
           </label>
           <input
+            onClick={() => setError({ ...error, username: "" })}
             value={input.username}
             name="username"
             onChange={handleInput}
@@ -83,6 +84,7 @@ export const CallToActionSection = () => {
             Lớp
           </label>
           <input
+            onClick={() => setError({ ...error, classRoom: "" })}
             value={input.classRoom}
             name="classRoom"
             onChange={handleInput}
@@ -102,6 +104,7 @@ export const CallToActionSection = () => {
             Lời chúc của bạn
           </label>
           <textarea
+            onClick={() => setError({ ...error, message: "" })}
             value={input.message}
             name="message"
             onChange={handleInput}
@@ -116,6 +119,9 @@ export const CallToActionSection = () => {
         </div>
         <div className="flex items-center gap-3 justify-end">
           <button
+            onClick={() =>
+              setInput({ ...input, username: "", classRoom: "", message: "" })
+            }
             type="reset"
             className="px-3 py-1 bg-gray-500 rounded text-white"
           >

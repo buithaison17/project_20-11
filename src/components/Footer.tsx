@@ -24,12 +24,12 @@ export const Footer = () => {
       </div>
       <div className="flex gap-3 items-center">
         <div onClick={() => window.open("https://facebook.com/thaison.17")}>
-          <FacebookOutlinedIcon></FacebookOutlinedIcon>
+          <FacebookOutlinedIcon className="hover:cursor-pointer"></FacebookOutlinedIcon>
         </div>
         <div
           onClick={() => window.open("https://www.instagram.com/thaison.17")}
         >
-          <InstagramIcon></InstagramIcon>
+          <InstagramIcon className="hover:cursor-pointer"></InstagramIcon>
         </div>
       </div>
       <div className="text-sm text-gray-500 text-center flex max-sm:flex-col">
